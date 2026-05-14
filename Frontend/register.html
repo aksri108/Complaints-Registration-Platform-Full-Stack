@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Complaint Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">ResolveIt</a>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="register.html" class="active">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="glass-card" id="registerCard">
+            <h2>Create an Account</h2>
+            <div id="generalError" class="error-msg text-center hidden" style="margin-bottom: 1rem;"></div>
+            <div id="generalSuccess" class="success-msg text-center hidden" style="margin-bottom: 1rem;"></div>
+            
+            <!-- Step 1: Request OTP -->
+            <form id="requestOtpForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required placeholder="you@example.com">
+                </div>
+                <button type="submit" class="btn" id="requestOtpBtn">Send OTP</button>
+            </form>
+
+            <!-- Step 2: Verify OTP -->
+            <form id="verifyOtpForm" class="hidden">
+                <p class="text-center" style="margin-bottom: 1rem; color: var(--text-secondary);">An OTP has been sent to your email.</p>
+                <div class="form-group">
+                    <label for="regOtp">Enter OTP</label>
+                    <input type="text" id="regOtp" required placeholder="123456" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn" id="registerBtn">Complete Registration</button>
+            </form>
+
+            <div class="text-center">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ResolveIt. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

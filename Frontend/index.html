@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ResolveIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: none;"> <!-- Hidden until session check -->
+    <nav>
+        <a href="index.html" class="logo">ResolveIt</a>
+        <div class="nav-links" id="navLinks">
+            <!-- Dynamically populated based on role -->
+            <a href="index.html" class="active">Dashboard</a>
+            <button id="logoutBtn" class="btn-nav">Logout</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="glass-card wide" style="max-width: 1000px;">
+            <div class="dashboard-header">
+                <h2 id="dashboardTitle">My Complaints</h2>
+                <a href="complaint.html" id="newComplaintBtn" class="btn" style="width: auto; margin-top: 0;">Submit New Complaint</a>
+            </div>
+            
+            <div id="generalError" class="error-msg text-center hidden" style="margin-bottom: 1rem;"></div>
+            
+            <div class="complaint-list" id="complaintsList">
+                <p class="text-center" style="color: var(--text-secondary);">Loading complaints...</p>
+                <!-- Complaints will be injected here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ResolveIt. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

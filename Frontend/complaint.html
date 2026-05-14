@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint - ResolveIt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display: none;"> <!-- Hidden until session check -->
+    <nav>
+        <a href="index.html" class="logo">ResolveIt</a>
+        <div class="nav-links">
+            <a href="index.html">My Complaints</a>
+            <a href="#" class="active">Submit New</a>
+            <button id="logoutBtn" class="btn-nav">Logout</button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="glass-card wide">
+            <h2>Submit a New Complaint</h2>
+            <div id="generalError" class="error-msg text-center hidden" style="margin-bottom: 1rem;"></div>
+            
+            <form id="complaintForm">
+                <div class="form-group">
+                    <label for="complaintText">Please describe your issue in detail</label>
+                    <textarea id="complaintText" required placeholder="I recently experienced an issue with..."></textarea>
+                </div>
+                
+                <button type="button" class="btn" id="getAiQuestionBtn">Next</button>
+
+                <!-- Hidden AI Question Section -->
+                <div id="aiSection" class="hidden" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                    <div class="form-group">
+                        <label>AI Follow-up Question:</label>
+                        <p id="aiQuestionText" style="margin-bottom: 1rem; color: var(--primary-color); font-weight: 500;"></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userAnswer">Your Answer</label>
+                        <textarea id="userAnswer" required placeholder="Provide your answer here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submitComplaintBtn">Submit Complaint</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ResolveIt. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
