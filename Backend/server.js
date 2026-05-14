@@ -9,10 +9,7 @@ const complaintRoutes = require('./src/routes/complaints');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: true, // Allow all origins for local testing. In prod, set to specific frontend URL.
-  credentials: true, // Allow cookies to be sent
-}));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
@@ -38,9 +35,9 @@ app.get('/api/admin/complaints', authenticateToken, isAdmin, async (req, res) =>
       userName: users.name,
       userEmail: users.email
     })
-    .from(complaints)
-    .leftJoin(users, eq(complaints.userId, users.id))
-    .orderBy(desc(complaints.createdAt));
+      .from(complaints)
+      .leftJoin(users, eq(complaints.userId, users.id))
+      .orderBy(desc(complaints.createdAt));
 
     res.json(allComplaints);
   } catch (error) {
