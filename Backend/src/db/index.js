@@ -8,7 +8,9 @@ if (!connectionString) {
   throw new Error('DATABASE_URL is missing in environment variables');
 }
 
-const client = postgres(connectionString);
+const client = postgres(connectionString, {
+  ssl: connectionString.includes('supabase') ? 'require' : false,
+});
 const db = drizzle(client);
 
 module.exports = db;
