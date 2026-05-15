@@ -1,4 +1,4 @@
-const BACKEND_BASE_URL = 'https://complaints-registration-platform-full-tzas.onrender.com/';
+const BACKEND_BASE_URL = 'https://complaints-registration-platform-full-tzas.onrender.com/api';
 
 // --- Utility Functions ---
 const getElement = id => document.getElementById(id);
